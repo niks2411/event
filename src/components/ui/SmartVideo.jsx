@@ -71,7 +71,7 @@ export default function SmartVideo({ src, id, poster, className, label }) {
                         muted={isMuted}
                         loop
                         playsInline
-                        preload="auto"
+                        preload="metadata"
                     />
                 )
             ) : null}

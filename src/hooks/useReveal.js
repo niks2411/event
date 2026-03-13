@@ -17,7 +17,7 @@ export default function useReveal() {
 
         const el = ref.current;
         if (el) {
-            const items = el.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            const items = el.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
             items.forEach((item) => observer.observe(item));
         }
 

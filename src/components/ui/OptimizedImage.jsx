@@ -8,19 +8,40 @@ export default function OptimizedImage({
     containerClassName = "",
     priority = false,
     aspectRatio = "aspect-auto",
-    objectFit = "object-cover"
+    objectFit = "object-cover",
+    width
 }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [error, setError] = useState(false);
 
+    const getOptimizedUrl = (url) => {
+        if (!url || !url.includes('cloudinary.com')) return url;
+        
+        const transformations = ['f_auto', 'q_auto'];
+        if (width) transformations.push(`w_${width}`);
+        const transformationString = transformations.join(',');
+
+        // If it already has transformation parameters, don't add more
+        if (url.includes('/upload/')) {
+            const parts = url.split('/upload/');
+            // Check if transformation follows immediately after /upload/
+            if (!parts[1].startsWith('f_auto') && !parts[1].startsWith('q_auto')) {
+                return `${parts[0]}/upload/${transformationString}/${parts[1]}`;
+            }
+        }
+        return url;
+    };
+
+    const optimizedSrc = getOptimizedUrl(src);
+
     useEffect(() => {
-        if (!src) return;
+        if (!optimizedSrc) return;
 
         const img = new Image();
-        img.src = src;
+        img.src = optimizedSrc;
         img.onload = () => setIsLoaded(true);
         img.onerror = () => setError(true);
-    }, [src]);
+    }, [optimizedSrc]);
 
     return (
         <div className={`relative overflow-hidden ${aspectRatio} ${containerClassName}`}>
@@ -43,7 +64,7 @@ export default function OptimizedImage({
                 </div>
             ) : (
                 <motion.img
-                    src={src}
+                    src={optimizedSrc}
                     alt={alt}
                     loading={priority ? "eager" : "lazy"}
                     initial={{ opacity: 0, scale: 1.05 }}

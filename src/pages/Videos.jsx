@@ -9,8 +9,8 @@ const featuredVideo = {
 
 const videoReels = [
     { title: 'Grand Wedding Entrance', category: 'Wedding', thumb: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop', duration: '3:24' },
-    { title: 'Spectacular Fireworks Display', category: 'Fireworks', thumb: '/fire.webp', duration: '2:15' },
-    { title: 'Haldi Ceremony Highlights', category: 'Haldi', thumb: '/haldi.webp', duration: '4:02' },
+    { title: 'Spectacular Fireworks Display', category: 'Fireworks', thumb: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp', duration: '2:15' },
+    { title: 'Haldi Ceremony Highlights', category: 'Haldi', thumb: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp', duration: '4:02' },
     { title: 'Corporate Year-End Gala', category: 'Corporate', thumb: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop', duration: '5:30' },
     { title: 'Romantic Engagement Night', category: 'Engagement', thumb: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&h=400&fit=crop', duration: '3:45' },
     { title: 'Stage Décor Transformation', category: 'Decoration', thumb: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop', duration: '1:58' },

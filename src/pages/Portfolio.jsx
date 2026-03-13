@@ -1,39 +1,63 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useReveal from '../hooks/useReveal';
 import SmartVideo from '../components/ui/SmartVideo';
 import OptimizedImage from '../components/ui/OptimizedImage';
 
-const categories = ['All', 'Weddings', 'Engagement', 'Haldi', 'Cinematic Reels', 'Fireworks'];
+const categories = ['All', 'Weddings', 'Engagement', 'Haldi', 'Fireworks'];
 
 const portfolioItems = [
-    { src: '/wedding/2I0A3871.JPG', cat: 'Weddings', title: 'Grand Entry Moment', h: 'h-80', poster: '/wedding.webp' },
-    { id: 'aUrasM-b3sg', cat: 'Cinematic Reels', title: 'Wedding Highlight', h: 'h-[400px]', isVideo: true, poster: '/wedding.webp' },
-    { src: '/wedding/2I0A3887.JPG', cat: 'Weddings', title: 'Mandap Decor', h: 'h-64', poster: '/wedding.webp' },
-    { id: 'rmU6a81ll3Q', cat: 'Cinematic Reels', title: 'Haldi Celebration', h: 'h-[400px]', isVideo: true, poster: '/haldi.webp' },
-    { src: '/haldi/IMG_0500.jpg', cat: 'Haldi', title: 'Traditional Haldi Setup', h: 'h-72', poster: '/haldi.webp' },
-    { src: '/engagement/IMG_0521 (1).jpg', cat: 'Engagement', title: 'Royal Engagement', h: 'h-64', poster: '/engagement.webp' },
-    { id: 'S9THv_CjII4', cat: 'Cinematic Reels', title: 'Mehndi & Decor', h: 'h-[400px]', isVideo: true, poster: '/haldi.webp' },
-    { src: '/mehndi/IMG_0430.jpg', cat: 'Haldi', title: 'Mehndi Art & Decor', h: 'h-80', poster: '/haldi.webp' },
-    { src: '/wedding/IMG_0543.jpg', cat: 'Weddings', title: 'Floral Elegance', h: 'h-72', poster: '/wedding.webp' },
-    { id: 'dALJnPgxfC8', cat: 'Cinematic Reels', title: 'Reception Highlights', h: 'h-[400px]', isVideo: true, poster: '/wedding.webp' },
-    { src: '/haldi/IMG_4421.jpg', cat: 'Haldi', title: 'Yellow Vibe Celebration', h: 'h-64', poster: '/haldi.webp' },
-    { src: '/engagement/IMG_0530.jpg', cat: 'Engagement', title: 'Ring Ceremony', h: 'h-80', poster: '/engagement.webp' },
-    { src: '/fire.webp', cat: 'Fireworks', title: 'Grand Finale Show', h: 'h-72', poster: '/fire.webp' },
-    { src: '/wedding/IMG_0554.jpg', cat: 'Weddings', title: 'Dinner Reception', h: 'h-64', poster: '/wedding.webp' },
-    { src: '/haldi/IMG_8484 (1).jpg', cat: 'Haldi', title: 'Vibrant Haldi Smiles', h: 'h-80', poster: '/haldi.webp' },
-    { src: '/mehndi/IMG_6723.jpg', cat: 'Haldi', title: 'Henna Traditions', h: 'h-72', poster: '/haldi.webp' },
-    { src: '/wedding/IMG_4477.jpg', cat: 'Weddings', title: 'Luxury Stay', h: 'h-64', poster: '/wedding.webp' },
-    { src: '/engagement/IMG_0532.jpg', cat: 'Engagement', title: 'Cake Cutting', h: 'h-80', poster: '/engagement.webp' },
-    { src: '/haldi/IMG_9346.jpg', cat: 'Haldi', title: 'Full Bloom Decor', h: 'h-72', poster: '/haldi.webp' },
-    { src: '/wedding/IMG_4443.jpg', cat: 'Weddings', title: 'Evening Vibe', h: 'h-64', poster: '/wedding.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg', cat: 'Weddings', title: 'Grand Entry Moment', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/2I0A3887_qdpcit.jpg', cat: 'Weddings', title: 'Mandap Decor', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0500_ujmroj.jpg', cat: 'Haldi', title: 'Traditional Haldi Setup', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400499/IMG_0521_1_mylb1b.jpg', cat: 'Engagement', title: 'Royal Engagement', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0430_mhfl3g.jpg', cat: 'Haldi', title: 'Mehndi Art & Decor', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0543_l4wmmh.jpg', cat: 'Weddings', title: 'Floral Elegance', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400583/IMG_4421_nil3lx.jpg', cat: 'Haldi', title: 'Yellow Vibe Celebration', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400502/IMG_0530_xds5xw.jpg', cat: 'Engagement', title: 'Ring Ceremony', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp', cat: 'Fireworks', title: 'Grand Finale Show', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/IMG_0554_q0cewx.jpg', cat: 'Weddings', title: 'Dinner Reception', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8484_1_krkswe.jpg', cat: 'Haldi', title: 'Vibrant Haldi Smiles', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_6723_bs8wi3.jpg', cat: 'Haldi', title: 'Henna Traditions', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4477_obe30u.jpg', cat: 'Weddings', title: 'Luxury Stay', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400501/IMG_0532_ecmg1p.jpg', cat: 'Engagement', title: 'Cake Cutting', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400640/IMG_9346_hj1kbn.jpg', cat: 'Haldi', title: 'Full Bloom Decor', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400689/IMG_4443_sezmp8.jpg', cat: 'Weddings', title: 'Evening Vibe', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
+    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0438_ymf5mm.jpg', cat: 'Haldi', title: 'Colorful Blooms', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
 ];
 
 export default function Portfolio() {
     const revealRef = useReveal();
     const [active, setActive] = useState('All');
     const [lightbox, setLightbox] = useState(null);
+    const [displayCount, setDisplayCount] = useState(6);
 
     const filtered = active === 'All' ? portfolioItems : portfolioItems.filter((item) => item.cat === active);
+    const displayedItems = filtered.slice(0, displayCount);
+
+    useEffect(() => {
+        // Preload remaining images in background after initial load
+        const timer = setTimeout(() => {
+            const itemsToPreload = portfolioItems.slice(6);
+            itemsToPreload.forEach(item => {
+                if (!item.isVideo && item.src) {
+                    const img = new Image();
+                    img.src = item.src.includes('cloudinary.com') 
+                        ? item.src.replace('/upload/', '/upload/f_auto,q_auto,w_600/') 
+                        : item.src;
+                }
+                if (item.poster) {
+                    const posterImg = new Image();
+                    posterImg.src = item.poster;
+                }
+            });
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const loadMore = () => {
+        setDisplayCount(prev => prev + 6);
+    };
 
     return (
         <div ref={revealRef}>
@@ -81,7 +105,7 @@ export default function Portfolio() {
 
                     {/* Masonry Gallery */}
                     <div className="masonry-grid">
-                        {filtered.map((item, i) => (
+                        {displayedItems.map((item, i) => (
                             <div
                                 key={(item.id || item.src) + i}
                                 className={`img-zoom rounded-2xl overflow-hidden shadow-md hover:shadow-2xl group cursor-pointer relative ${item.h}
@@ -100,6 +124,7 @@ export default function Portfolio() {
                                         alt={item.title}
                                         className="w-full h-full"
                                         containerClassName="h-full"
+                                        width={600}
                                     />
                                 )}
                                 <div className="img-overlay">
@@ -114,6 +139,18 @@ export default function Portfolio() {
                             </div>
                         ))}
                     </div>
+
+                    {/* Load More Button */}
+                    {displayCount < filtered.length && (
+                        <div className="mt-20 text-center reveal">
+                            <button
+                                onClick={loadMore}
+                                className="px-12 py-4 bg-gold text-white font-bold text-xs tracking-[0.2em] uppercase rounded-full shadow-lg shadow-gold/20 hover:bg-gold-dark hover:-translate-y-1 transition-all duration-300"
+                            >
+                                Load More Stories
+                            </button>
+                        </div>
+                    )}
                 </div>
             </section>
 
