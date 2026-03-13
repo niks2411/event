@@ -3,6 +3,7 @@ import useReveal from '../hooks/useReveal';
 import { Link } from 'react-router-dom';
 import Lightbox from '../components/ui/Lightbox';
 import { AnimatePresence } from 'framer-motion';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 const services = [
     {
@@ -121,13 +122,14 @@ export default function Services() {
         <div ref={revealRef}>
             {/* Hero */}
             <section className="hero-page relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0"
-                    style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=800&fit=crop')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                <div className="absolute inset-0">
+                    <OptimizedImage
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=800&fit=crop"
+                        alt="Services Hero"
+                        className="w-full h-full"
+                        priority
+                    />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal/70" />
                 <div className="relative z-10 text-center px-4">
                     <div className="ornament-line mb-4 animate-fade-in">
@@ -163,8 +165,8 @@ export default function Services() {
                                 onClick={() => s.gallery && openGallery(s)}
                             >
                                 <div className="h-64 relative overflow-hidden group">
-                                    <img src={s.img} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                    <OptimizedImage src={s.img} alt={s.title} className="w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
                                         {s.gallery && (
                                             <span className="px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-widest uppercase rounded-full">
                                                 View Gallery

@@ -4,6 +4,7 @@ import useCounter from '../hooks/useCounter';
 import { Link } from 'react-router-dom';
 import Lightbox from '../components/ui/Lightbox';
 import SmartVideo from '../components/ui/SmartVideo';
+import OptimizedImage from '../components/ui/OptimizedImage';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const servicesList = [
@@ -94,10 +95,9 @@ const workingProcess = [
 ];
 
 const reels = [
-    { id: 'aUrasM-b3sg', label: 'Grand Wedding Highlight', poster: '/wedding.webp' },
-    { id: 'rmU6a81ll3Q', label: 'Haldi Celebration', poster: '/haldi.webp' },
-    { id: 'S9THv_CjII4', label: 'Mehndi Magic', poster: '/haldi.webp' },
-    { id: 'dALJnPgxfC8', label: 'Reception Night', poster: '/wedding.webp' },
+    { src: '/SnapInsta.to_AQO-QusoRvyFu_hougfDxDL_D6jobQIocSM38JRdvH86hlhPPr9-lbkFOZW84eHZqTLJQsmjG6_0abUa9xI569OGY2u25skLGHk3TlU.mp4', label: 'Grand Wedding Highlight', poster: '/wedding.webp' },
+    { src: '/SnapInsta.to_AQPB_Ca46sHHf0nlTofJ5CTC2NGvQ_PKtCXB4iEGYjG_B3MfrMW-5rbSV1KWKs2WGdG6Q1C19Yx7idDW2ItbXKAA.mp4', label: 'Haldi Celebration', poster: '/haldi.webp' },
+    { src: '/SnapInsta.to_AQPN0O7NWaUVZPt22z9SwPUQeljBT987QuQfOn6MOLTVZgP5I0LF8x_VNJVm_gNvq5eTDGOCviUsV0C2PzDgV6RI.mp4', label: 'Mehndi Magic', poster: '/haldi.webp' },
 ];
 
 export default function Home() {
@@ -251,13 +251,12 @@ export default function Home() {
                                 onClick={() => s.gallery && openGallery(s)}
                             >
                                 <div className="img-zoom h-52 relative">
-                                    <img src={s.img} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
+                                    <OptimizedImage src={s.img} alt={s.title} className="w-full h-full" />
                                     <div className="img-overlay flex items-center justify-center">
                                         <span className="text-white text-[10px] font-bold tracking-widest uppercase px-4 py-2 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full">
                                             {s.gallery ? 'View Gallery →' : 'Explore →'}
                                         </span>
                                     </div>
-                                    <span className="absolute top-4 left-4 icon-badge icon-badge-circle text-sm">{s.badge}</span>
                                 </div>
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{s.title}</h3>
@@ -291,7 +290,7 @@ export default function Home() {
                                 className={`reveal img-zoom rounded-2xl overflow-hidden shadow-md hover:shadow-2xl group cursor-pointer relative ${item.h} transition-all duration-500`}
                                 onClick={() => openGallery({ title: item.label, gallery: [item.src] })}
                             >
-                                <img src={item.src} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
+                                <OptimizedImage src={item.src} alt={item.label} className="w-full h-full" containerClassName="h-full" />
                                 <div className="img-overlay">
                                     <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-heading)' }}>{item.label}</span>
                                     <span className="text-gold text-xs tracking-wider uppercase mt-2">View Photo</span>
@@ -322,15 +321,15 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {reels.map((reel, i) => (
                             <div
-                                key={reel.id}
+                                key={reel.src}
                                 className="reveal relative aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group cursor-pointer"
                                 style={{ transitionDelay: `${i * 0.15}s` }}
                             >
                                 <SmartVideo
-                                    id={reel.id}
+                                    src={reel.src}
                                     poster={reel.poster}
                                     label={reel.label}
                                 />

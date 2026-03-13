@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useReveal from '../hooks/useReveal';
 import SmartVideo from '../components/ui/SmartVideo';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 const categories = ['All', 'Weddings', 'Engagement', 'Haldi', 'Cinematic Reels', 'Fireworks'];
 
@@ -94,11 +95,11 @@ export default function Portfolio() {
                                         label={item.title}
                                     />
                                 ) : (
-                                    <img
+                                    <OptimizedImage
                                         src={item.src}
                                         alt={item.title}
-                                        className="w-full h-full object-cover"
-                                        loading="lazy"
+                                        className="w-full h-full"
+                                        containerClassName="h-full"
                                     />
                                 )}
                                 <div className="img-overlay">
@@ -139,7 +140,7 @@ export default function Portfolio() {
                                 />
                             </div>
                         ) : (
-                            <img src={lightbox.src} alt={lightbox.title} className="max-h-[75vh] w-auto rounded-xl shadow-2xl" />
+                            <OptimizedImage src={lightbox.src} alt={lightbox.title} className="max-h-[75vh] w-auto rounded-xl shadow-2xl" priority />
                         )}
                         <div className="text-center mt-6">
                             <h4 className="text-white text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>{lightbox.title}</h4>

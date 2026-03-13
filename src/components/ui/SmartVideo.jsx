@@ -2,8 +2,10 @@ import React, { useRef, useEffect, useState } from 'react';
 
 export default function SmartVideo({ src, id, poster, className, label }) {
     const containerRef = useRef(null);
+    const videoRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -24,9 +26,14 @@ export default function SmartVideo({ src, id, poster, className, label }) {
         };
     }, []);
 
+    const toggleMute = (e) => {
+        e.stopPropagation();
+        setIsMuted(!isMuted);
+    };
+
     // YouTube Embed URL Builder
     const getYouTubeUrl = (videoId) => {
-        return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0`;
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0`;
     };
 
     return (
@@ -56,17 +63,29 @@ export default function SmartVideo({ src, id, poster, className, label }) {
                 ) : (
                     // Local MP4 Mode
                     <video
+                        ref={videoRef}
                         src={src}
                         className={`w-full h-full object-cover transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                         onLoadedData={() => setIsLoaded(true)}
                         autoPlay
-                        muted
+                        muted={isMuted}
                         loop
                         playsInline
-                        preload="none"
+                        preload="auto"
                     />
                 )
             ) : null}
+
+            {/* Mute Toggle Button */}
+            <button
+                onClick={toggleMute}
+                className="absolute top-6 right-6 z-40 w-10 h-10 rounded-full bg-black/20 backdrop-blur-md border border-white/20 
+                    flex items-center justify-center text-white hover:bg-gold transition-all duration-300 group/mute"
+            >
+                <span className="text-lg group-hover/mute:scale-110 transition-transform">
+                    {isMuted ? '🔇' : '🔊'}
+                </span>
+            </button>
 
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 z-20 pointer-events-none" />
@@ -75,7 +94,7 @@ export default function SmartVideo({ src, id, poster, className, label }) {
                 <p className="text-white font-bold text-lg leading-tight mb-1" style={{ fontFamily: 'var(--font-heading)' }}>{label}</p>
                 <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                    <span className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">YouTube Reel</span>
+                    <span className="text-gold text-[10px] font-bold tracking-[0.2em] uppercase">{id ? 'YouTube Reel' : 'Cinematic Reel'}</span>
                 </div>
             </div>
         </div>

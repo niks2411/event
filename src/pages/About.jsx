@@ -1,6 +1,7 @@
 import useReveal from '../hooks/useReveal';
 import useCounter from '../hooks/useCounter';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 import { Timeline } from '../components/ui/Timeline';
 
@@ -54,10 +55,10 @@ const timelineData = [
                     Reaching our 50th event was a proud moment. We became known for our attention to detail and flawless execution.
                 </p>
                 <div className="rounded-2xl overflow-hidden h-48">
-                    <img
+                    <OptimizedImage
                         src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop"
                         alt="Event Setup"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full"
                     />
                 </div>
             </div>
@@ -145,12 +146,11 @@ export default function About() {
                             </Link>
                         </div>
                         <div className="reveal-right">
-                            <div className="relative">
-                                <img
+                            <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden">
+                                <OptimizedImage
                                     src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=700&fit=crop"
                                     alt="Shimmer Plano Events"
-                                    className="rounded-2xl shadow-2xl w-full object-cover"
-                                    loading="lazy"
+                                    className="w-full h-full"
                                 />
                                 <div className="absolute -bottom-6 -left-6 bg-gold text-white p-6 rounded-2xl shadow-xl animate-gentle-pulse">
                                     <p className="text-3xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>100+</p>
@@ -167,13 +167,13 @@ export default function About() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="reveal-left order-2 lg:order-1">
-                            <div className="relative">
-                                <img
+                            <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
+                                <OptimizedImage
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop"
                                     alt="Aakash Narwat"
-                                    className="rounded-2xl shadow-2xl w-full max-w-md mx-auto object-cover aspect-[4/5]"
+                                    className="w-full h-full"
                                 />
-                                <div className="absolute top-4 right-4 w-24 h-24 border-t-2 border-r-2 border-gold/30 rounded-tr-2xl" />
+                                <div className="absolute top-4 right-4 w-24 h-24 border-t-2 border-r-2 border-gold/30 rounded-tr-2xl z-10" />
                             </div>
                         </div>
                         <div className="reveal-right order-1 lg:order-2">

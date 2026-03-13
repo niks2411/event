@@ -1,5 +1,6 @@
 import useReveal from '../hooks/useReveal';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/ui/OptimizedImage';
 
 const featuredVideo = {
     title: 'Priya & Rahul — A Royal Wedding',
@@ -25,13 +26,14 @@ export default function Videos() {
         <div ref={revealRef}>
             {/* Hero */}
             <section className="hero-page relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0"
-                    style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=1920&h=800&fit=crop')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                <div className="absolute inset-0">
+                    <OptimizedImage
+                        src="https://images.unsplash.com/photo-1504509546545-e000b4a62425?w=1920&h=800&fit=crop"
+                        alt="Videos Hero"
+                        className="w-full h-full"
+                        priority
+                    />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/50 to-charcoal/70" />
                 <div className="gradient-orb gradient-orb-gold w-80 h-80 bottom-10 right-10 animate-orb-float" />
                 <div className="relative z-10 text-center px-4">
@@ -56,10 +58,10 @@ export default function Videos() {
                         </h2>
                     </div>
                     <div className="reveal aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/8 relative cursor-pointer group">
-                        <img
+                        <OptimizedImage
                             src={featuredVideo.thumb}
                             alt={featuredVideo.title}
-                            className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                            className="w-full h-full opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                             <div className="w-20 h-20 rounded-full bg-gold/80 flex items-center justify-center group-hover:scale-110 group-hover:bg-gold transition-all duration-500 shadow-xl">
@@ -93,7 +95,7 @@ export default function Videos() {
                                 style={{ transitionDelay: `${i * 0.05}s` }}
                             >
                                 <div className="img-zoom aspect-video rounded-2xl overflow-hidden shadow-md hover:shadow-xl relative transition-shadow duration-300">
-                                    <img src={v.thumb} alt={v.title} className="w-full h-full object-cover" loading="lazy" />
+                                    <OptimizedImage src={v.thumb} alt={v.title} className="w-full h-full" />
                                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div className="w-14 h-14 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                                             <span className="text-white text-xl ml-0.5">▶</span>
