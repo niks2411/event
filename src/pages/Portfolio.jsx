@@ -2,27 +2,31 @@ import { useState, useEffect } from 'react';
 import useReveal from '../hooks/useReveal';
 import SmartVideo from '../components/ui/SmartVideo';
 import OptimizedImage from '../components/ui/OptimizedImage';
+import Lightbox from '../components/ui/Lightbox';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const categories = ['All', 'Weddings', 'Engagement', 'Haldi', 'Fireworks'];
+const categories = ['All', 'Weddings', 'Engagement', 'Haldi & Mehndi', 'Sangeet', 'SFX & Entry'];
 
 const portfolioItems = [
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg', cat: 'Weddings', title: 'Grand Entry Moment', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/2I0A3887_qdpcit.jpg', cat: 'Weddings', title: 'Mandap Decor', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0500_ujmroj.jpg', cat: 'Haldi', title: 'Traditional Haldi Setup', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400499/IMG_0521_1_mylb1b.jpg', cat: 'Engagement', title: 'Royal Engagement', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0430_mhfl3g.jpg', cat: 'Haldi', title: 'Mehndi Art & Decor', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0543_l4wmmh.jpg', cat: 'Weddings', title: 'Floral Elegance', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400583/IMG_4421_nil3lx.jpg', cat: 'Haldi', title: 'Yellow Vibe Celebration', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400502/IMG_0530_xds5xw.jpg', cat: 'Engagement', title: 'Ring Ceremony', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp', cat: 'Fireworks', title: 'Grand Finale Show', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/IMG_0554_q0cewx.jpg', cat: 'Weddings', title: 'Dinner Reception', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8484_1_krkswe.jpg', cat: 'Haldi', title: 'Vibrant Haldi Smiles', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_6723_bs8wi3.jpg', cat: 'Haldi', title: 'Henna Traditions', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4477_obe30u.jpg', cat: 'Weddings', title: 'Luxury Stay', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400501/IMG_0532_ecmg1p.jpg', cat: 'Engagement', title: 'Cake Cutting', h: 'h-80', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400640/IMG_9346_hj1kbn.jpg', cat: 'Haldi', title: 'Full Bloom Decor', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400689/IMG_4443_sezmp8.jpg', cat: 'Weddings', title: 'Evening Vibe', h: 'h-64', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp' },
-    { src: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0438_ymf5mm.jpg', cat: 'Haldi', title: 'Colorful Blooms', h: 'h-72', poster: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp' },
+    { src: '/wedding/IMG_0543.jpg', cat: 'Weddings', title: 'Grand Mandap Setup', h: 'h-80' },
+    { src: '/wedding/IMG_0546.jpg', cat: 'Weddings', title: 'Luxury Floral Decor', h: 'h-64' },
+    { src: '/haldi-mehndi/IMG_4429.jpg', cat: 'Haldi & Mehndi', title: 'Traditional Haldi Vibe', h: 'h-72' },
+    { src: '/engagement/IMG_0521_1.jpg', cat: 'Engagement', title: 'Royal Engagement Entry', h: 'h-64' },
+    { src: '/sangeet/IMG_0845.jpg', cat: 'Sangeet', title: 'Sangeet Celebration Night', h: 'h-80' },
+    { src: '/haldi-mehndi/IMG_0430.jpg', cat: 'Haldi & Mehndi', title: 'Seating Ambience', h: 'h-72' },
+    { src: '/wedding/IMG_0549.jpg', cat: 'Weddings', title: 'Bride & Groom Seating', h: 'h-64' },
+    { src: '/engagement/IMG_0530.jpg', cat: 'Engagement', title: 'Ring Ceremony Decor', h: 'h-80' },
+    { src: '/entry-sfx/IMG_0926.jpg', cat: 'SFX & Entry', title: 'Cold Firework Entry', h: 'h-72' },
+    { src: '/wedding/IMG_0554.jpg', cat: 'Weddings', title: 'Reception Grandeur', h: 'h-64' },
+    { src: '/haldi-mehndi/IMG_6756.jpg', cat: 'Haldi & Mehndi', title: 'Colorful Mehndi Setup', h: 'h-80' },
+    { src: '/sangeet/IMG_0922.jpg', cat: 'Sangeet', title: 'High-Energy Dance Floor', h: 'h-72' },
+    { src: '/engagement/IMG_0526.jpg', cat: 'Engagement', title: 'Elegant Stage Setup', h: 'h-64' },
+    { src: '/haldi-mehndi/IMG_6766.jpg', cat: 'Haldi & Mehndi', title: 'Floral Mandap Details', h: 'h-80' },
+    { src: '/sangeet/IMG_0933.jpg', cat: 'Sangeet', title: 'DJ & Sound Experience', h: 'h-72' },
+    { src: '/wedding/IMG_0592.jpg', cat: 'Weddings', title: 'Evening Ambience', h: 'h-64' },
+    { src: '/haldi-mehndi/IMG_0438.jpg', cat: 'Haldi & Mehndi', title: 'Traditional Vibe Decor', h: 'h-72' },
+    { src: '/engagement/IMG_0532.jpg', cat: 'Engagement', title: 'Couple Celebration Moment', h: 'h-80' },
+    { src: '/haldi-mehndi/IMG_9251.jpg', cat: 'Haldi & Mehndi', title: 'Mehndi Garden Setup', h: 'h-72' },
 ];
 
 export default function Portfolio() {
@@ -104,41 +108,51 @@ export default function Portfolio() {
                     </div>
 
                     {/* Masonry Gallery */}
-                    <div className="masonry-grid">
-                        {displayedItems.map((item, i) => (
-                            <div
-                                key={(item.id || item.src) + i}
-                                className={`img-zoom rounded-2xl overflow-hidden shadow-md hover:shadow-2xl group cursor-pointer relative ${item.h}
-                                    transition-all duration-500 bg-charcoal/5`}
-                                onClick={() => setLightbox(item)}
-                            >
-                                {item.isVideo ? (
-                                    <SmartVideo
-                                        id={item.id}
-                                        poster={item.poster}
-                                        label={item.title}
-                                    />
-                                ) : (
-                                    <OptimizedImage
-                                        src={item.src}
-                                        alt={item.title}
-                                        className="w-full h-full"
-                                        containerClassName="h-full"
-                                        width={600}
-                                    />
-                                )}
-                                <div className="img-overlay">
-                                    <span className="text-gold text-xs tracking-wider uppercase mb-1">{item.cat}</span>
-                                    <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-heading)' }}>{item.title}</span>
-                                    {item.isVideo && (
-                                        <span className="px-3 py-1 bg-gold text-white text-[8px] font-bold tracking-widest uppercase rounded-full mt-2">
-                                            YouTube Reel
-                                        </span>
+                    <motion.div 
+                        layout
+                        className="masonry-grid"
+                    >
+                        <AnimatePresence mode="popLayout">
+                            {displayedItems.map((item, i) => (
+                                <motion.div
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.9 }}
+                                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                                    key={(item.id || item.src) + i}
+                                    className={`img-zoom rounded-2xl overflow-hidden shadow-md hover:shadow-2xl group cursor-pointer relative ${item.h}
+                                        transition-all duration-500 bg-charcoal/5`}
+                                    onClick={() => setLightbox(item)}
+                                >
+                                    {item.isVideo ? (
+                                        <SmartVideo
+                                            id={item.id}
+                                            poster={item.poster}
+                                            label={item.title}
+                                        />
+                                    ) : (
+                                        <OptimizedImage
+                                            src={item.src}
+                                            alt={item.title}
+                                            className="w-full h-full"
+                                            containerClassName="h-full"
+                                            width={600}
+                                        />
                                     )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                                    <div className="img-overlay">
+                                        <span className="text-gold text-xs tracking-wider uppercase mb-1">{item.cat}</span>
+                                        <span className="text-white font-bold text-lg" style={{ fontFamily: 'var(--font-heading)' }}>{item.title}</span>
+                                        {item.isVideo && (
+                                            <span className="px-3 py-1 bg-gold text-white text-[8px] font-bold tracking-widest uppercase rounded-full mt-2">
+                                                YouTube Reel
+                                            </span>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </motion.div>
 
                     {/* Load More Button */}
                     {displayCount < filtered.length && (
@@ -155,37 +169,24 @@ export default function Portfolio() {
             </section>
 
             {/* Lightbox */}
-            {lightbox && (
-                <div className="lightbox-overlay" onClick={() => setLightbox(null)}>
-                    <button
-                        className="absolute top-6 right-6 text-white/60 hover:text-white text-2xl z-10 w-10 h-10 rounded-full
-                            border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all duration-300"
-                        onClick={() => setLightbox(null)}
-                    >
-                        ✕
-                    </button>
-                    <div className="max-w-4xl w-full p-4 flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
-                        {lightbox.isVideo ? (
-                            <div className="w-full aspect-[9/16] max-h-[85vh] rounded-xl overflow-hidden shadow-2xl border-4 border-white/5 bg-black">
-                                <iframe
-                                    src={`https://www.youtube.com/embed/${lightbox.id}?autoplay=1&controls=1&rel=0`}
-                                    className="w-full h-full"
-                                    title={lightbox.title}
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </div>
-                        ) : (
-                            <OptimizedImage src={lightbox.src} alt={lightbox.title} className="max-h-[75vh] w-auto rounded-xl shadow-2xl" priority />
-                        )}
-                        <div className="text-center mt-6">
-                            <h4 className="text-white text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>{lightbox.title}</h4>
-                            <p className="text-gold text-sm tracking-widest uppercase mt-2 font-bold">{lightbox.cat}</p>
-                        </div>
-                    </div>
-                </div>
-            )}
+            <AnimatePresence>
+                {lightbox && (
+                    <Lightbox
+                        gallery={filtered.map(item => item.src)} // Pass all filtered images to lightbox
+                        index={filtered.indexOf(lightbox)}
+                        onClose={() => setLightbox(null)}
+                        onNext={() => {
+                            const currentIndex = filtered.indexOf(lightbox);
+                            setLightbox(filtered[(currentIndex + 1) % filtered.length]);
+                        }}
+                        onPrev={() => {
+                            const currentIndex = filtered.indexOf(lightbox);
+                            setLightbox(filtered[(currentIndex - 1 + filtered.length) % filtered.length]);
+                        }}
+                        onIndexChange={(idx) => setLightbox(filtered[idx])}
+                    />
+                )}
+            </AnimatePresence>
         </div>
     );
 }

@@ -119,7 +119,7 @@ export default function Contact() {
                                         <span className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-sm flex-shrink-0 mt-0.5">📍</span>
                                         <div>
                                             <p className="font-bold text-charcoal mb-0.5 text-base uppercase tracking-wider">Location</p>
-                                            <p className="text-lg">Faridabad, Haryana<br /><span className="text-gold font-semibold">(Serving Delhi-NCR)</span></p>
+                                            <p className="text-lg">Faridabad, Haryana<br /><span className="text-gold font-semibold">(Serving Pan India)</span></p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">

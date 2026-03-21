@@ -9,49 +9,42 @@ const services = [
     {
         title: 'Wedding Planning & Decor',
         badge: 'W',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp',
+        img: '/wedding/IMG_0543.jpg',
         desc: 'Complete wedding planning, décor design, theme styling and on-ground management.',
         includes: ['Mandap & stage decor', 'Bride & groom entry concepts', 'Floral & lighting setup', 'Guest seating & ambience'],
         gallery: [
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/2I0A3887_qdpcit.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3892_llo9tu.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/2I0A3894_wzvxku.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0543_l4wmmh.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0546_bucqed.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0549_gxam0n.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/IMG_0554_q0cewx.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400689/IMG_0592_wpqvi2.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400689/IMG_4443_sezmp8.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4448_uw6hza.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4450_yoxqwk.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4453_prgdj7.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4461_edcnpf.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4465_f5g8j1.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4477_obe30u.jpg'
+            '/wedding/IMG_0543.jpg', '/wedding/IMG_0546.jpg', '/wedding/IMG_0549.jpg', '/wedding/IMG_0554.jpg', '/wedding/IMG_0592.jpg'
         ]
     },
     {
         title: 'Haldi & Mehndi Events',
         badge: 'H',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp',
+        img: '/haldi-mehndi/IMG_4429.jpg',
         desc: 'Vibrant, colorful and joyful décor and planning for Haldi & Mehndi functions.',
         includes: ['Theme décor & floral setup', 'Entry coordination', 'Music & vibe planning', 'Guest flow management'],
         gallery: [
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0500_ujmroj.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0502_xvnngk.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0512_x5grj0.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400583/IMG_4421_nil3lx.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_4422_dsihuf.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_4423_n3re1h.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_4429_gk5rc1.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_6756_xqny3k.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400586/IMG_6766_iffext.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_6770_e5218i.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_8477_mepaxv.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400586/IMG_8480_quztya.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8484_1_krkswe.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400587/IMG_8488_hsk3oa.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8490_bhl0iu.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400595/IMG_8495_ruvgi5.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400611/IMG_8500_urluvv.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400613/IMG_8759_yt1ea4.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400614/IMG_8764_mjq1gh.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400615/IMG_8791_mof67n.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400618/IMG_8796_kukyil.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400622/IMG_8803_ib3o9m.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400625/IMG_8808_uaoqps.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400627/IMG_9246_gecyg6.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400627/IMG_9251_fzrtcd.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400629/IMG_9257_kofcaa.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400630/IMG_9259_grkd5e.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400632/IMG_9339_rj67ao.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400640/IMG_9346_hj1kbn.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0430_mhfl3g.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0438_ymf5mm.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_6723_bs8wi3.jpg'
+            '/haldi-mehndi/IMG_0430.jpg', '/haldi-mehndi/IMG_0438.jpg', '/haldi-mehndi/IMG_0502.jpg', '/haldi-mehndi/IMG_4429.jpg',
+            '/haldi-mehndi/IMG_6723.jpg', '/haldi-mehndi/IMG_6756.jpg', '/haldi-mehndi/IMG_6766.jpg', '/haldi-mehndi/IMG_9251.jpg'
         ]
     },
     {
         title: 'Sangeet Night',
         badge: 'S',
-        img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&h=500&fit=crop',
+        img: '/sangeet/IMG_0845.jpg',
         desc: 'High-energy sangeet planning with performances, DJ, and show flow management.',
-        includes: ['DJ & sound setup', 'Anchor coordination', 'Dance performance flow', 'Stage & lighting management']
+        includes: ['DJ & sound setup', 'Anchor coordination', 'Dance performance flow', 'Stage & lighting management'],
+        gallery: [
+            '/sangeet/IMG_0845.jpg', '/sangeet/IMG_0848.jpg', '/sangeet/IMG_0922.jpg', '/sangeet/IMG_0933.jpg'
+        ]
     },
     {
         title: 'Engagement Ceremony',
         badge: 'E',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp',
+        img: '/engagement/IMG_0521_1.jpg',
         desc: 'Elegant engagement décor and complete ceremony coordination.',
         includes: ['Couple entry planning', 'Stage flow management', 'Floral décor', 'Photography coordination'],
         gallery: [
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400499/IMG_0521_1_mylb1b.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400500/IMG_0524_nfk9du.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400500/IMG_0526_ufsfwp.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400502/IMG_0530_xds5xw.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400501/IMG_0532_ecmg1p.jpg'
+            '/engagement/IMG_0521_1.jpg', '/engagement/IMG_0526.jpg', '/engagement/IMG_0530.jpg', '/engagement/IMG_0532.jpg'
         ]
     },
     {
@@ -71,9 +64,10 @@ const services = [
     {
         title: 'SFX – Special Effects',
         badge: 'F',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp',
+        img: '/entry-sfx/IMG_0926.jpg',
         desc: 'Luxury effects to make your event magical.',
-        includes: ['Cold fireworks', 'Indoor fireworks', 'Sparkle machines', 'Special entry effects', 'Grand moment highlights']
+        includes: ['Cold fireworks', 'Indoor fireworks', 'Sparkle machines', 'Special entry effects', 'Grand moment highlights'],
+        gallery: ['/entry-sfx/IMG_0926.jpg']
     },
     {
         title: 'Hospitality & Guest Management',

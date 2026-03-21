@@ -12,73 +12,82 @@ const servicesList = [
     {
         title: 'Wedding Planning & Decor',
         badge: 'W',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/wedding_n1rfnd.webp',
+        img: '/wedding/IMG_0543.jpg',
         desc: 'Complete wedding planning, décor design, and on-ground management.',
         gallery: [
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/2I0A3887_qdpcit.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3892_llo9tu.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/2I0A3894_wzvxku.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0543_l4wmmh.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0546_bucqed.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0549_gxam0n.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/IMG_0554_q0cewx.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400689/IMG_0592_wpqvi2.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400689/IMG_4443_sezmp8.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4448_uw6hza.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4450_yoxqwk.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4453_prgdj7.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4461_edcnpf.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4465_f5g8j1.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400734/IMG_4477_obe30u.jpg'
+            '/wedding/IMG_0543.jpg', '/wedding/IMG_0546.jpg', '/wedding/IMG_0549.jpg', '/wedding/IMG_0554.jpg', '/wedding/IMG_0592.jpg'
         ]
     },
     {
         title: 'Haldi & Mehndi Events',
         badge: 'H',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400465/haldi_evqqdk.webp',
+        img: '/haldi-mehndi/IMG_4429.jpg',
         desc: 'Vibrant, colorful and joyful décor and planning for Haldi & Mehndi.',
         gallery: [
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0500_ujmroj.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0502_xvnngk.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0512_x5grj0.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400583/IMG_4421_nil3lx.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_4422_dsihuf.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_4423_n3re1h.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_4429_gk5rc1.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_6756_xqny3k.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400586/IMG_6766_iffext.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_6770_e5218i.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_8477_mepaxv.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400586/IMG_8480_quztya.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8484_1_krkswe.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400587/IMG_8488_hsk3oa.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8490_bhl0iu.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400595/IMG_8495_ruvgi5.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400611/IMG_8500_urluvv.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400613/IMG_8759_yt1ea4.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400614/IMG_8764_mjq1gh.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400615/IMG_8791_mof67n.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400618/IMG_8796_kukyil.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400622/IMG_8803_ib3o9m.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400625/IMG_8808_uaoqps.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400627/IMG_9246_gecyg6.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400627/IMG_9251_fzrtcd.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400629/IMG_9257_kofcaa.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400630/IMG_9259_grkd5e.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400632/IMG_9339_rj67ao.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400640/IMG_9346_hj1kbn.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0430_mhfl3g.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0438_ymf5mm.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_6723_bs8wi3.jpg'
+            '/haldi-mehndi/IMG_0430.jpg', '/haldi-mehndi/IMG_0438.jpg', '/haldi-mehndi/IMG_0502.jpg', '/haldi-mehndi/IMG_4429.jpg',
+            '/haldi-mehndi/IMG_6723.jpg', '/haldi-mehndi/IMG_6756.jpg', '/haldi-mehndi/IMG_6766.jpg', '/haldi-mehndi/IMG_9251.jpg'
         ]
     },
-    { title: 'Sangeet Night', badge: 'S', img: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop', desc: 'High-energy sangeet planning with performances and DJ.' },
+    {
+        title: 'Sangeet Night',
+        badge: 'S',
+        img: '/sangeet/IMG_0845.jpg',
+        desc: 'High-energy sangeet planning with performances and DJ.',
+        gallery: [
+            '/sangeet/IMG_0845.jpg', '/sangeet/IMG_0848.jpg', '/sangeet/IMG_0922.jpg', '/sangeet/IMG_0933.jpg'
+        ]
+    },
     {
         title: 'Engagement Ceremony',
         badge: 'E',
-        img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/engagement_p1hq4n.webp',
+        img: '/engagement/IMG_0521_1.jpg',
         desc: 'Elegant engagement décor and complete ceremony coordination.',
         gallery: [
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400499/IMG_0521_1_mylb1b.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400500/IMG_0524_nfk9du.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400500/IMG_0526_ufsfwp.jpg',
-            'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400502/IMG_0530_xds5xw.jpg', 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400501/IMG_0532_ecmg1p.jpg'
+            '/engagement/IMG_0521_1.jpg', '/engagement/IMG_0526.jpg', '/engagement/IMG_0530.jpg', '/engagement/IMG_0532.jpg'
         ]
     },
-    { title: 'Photography & Films', badge: 'P', img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop', desc: 'Professional photography and cinematic wedding films.' },
-    { title: 'SFX & Entry Concepts', badge: 'F', img: 'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp', desc: 'Luxury special effects and grand entry concepts for a magical event.' },
+    { 
+        title: 'Photography & Films', 
+        badge: 'P', 
+        img: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop', 
+        desc: 'Professional photography and cinematic wedding films.'
+    },
+    { 
+        title: 'SFX & Entry Concepts', 
+        badge: 'F', 
+        img: '/entry-sfx/IMG_0926.jpg', 
+        desc: 'Luxury special effects and grand entry concepts for a magical event.',
+        gallery: ['/entry-sfx/IMG_0926.jpg']
+    },
 ];
 
 const heroSlides = [
     'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_8477_mepaxv.jpg',
+    '/bg8.jpeg',
     'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400499/IMG_0521_1_mylb1b.jpg',
     'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0438_ymf5mm.jpg',
     'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0546_bucqed.jpg'
 ];
 
 const galleryImages = [
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400582/IMG_0512_x5grj0.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400499/IMG_0521_1_mylb1b.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400464/fire_cmv6ch.webp',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400687/IMG_0546_bucqed.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400585/IMG_8477_mepaxv.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400733/IMG_4450_yoxqwk.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400627/IMG_9251_fzrtcd.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/IMG_0554_q0cewx.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400588/IMG_8484_1_krkswe.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400500/IMG_0524_nfk9du.jpg',
-    'https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400666/IMG_0438_ymf5mm.jpg'
+    '/wedding/IMG_0543.jpg',
+    '/haldi-mehndi/IMG_4429.jpg',
+    '/engagement/IMG_0521_1.jpg',
+    '/sangeet/IMG_0845.jpg',
+    '/wedding/IMG_0546.jpg',
+    '/haldi-mehndi/IMG_6756.jpg',
+    '/engagement/IMG_0530.jpg',
+    '/sangeet/IMG_0922.jpg',
+    '/wedding/IMG_0549.jpg',
+    '/haldi-mehndi/IMG_0438.jpg',
+    '/engagement/IMG_0526.jpg',
+    '/entry-sfx/IMG_0926.jpg'
 ];
 
 const testimonials = [
-    { name: 'Priya & Rahul', role: 'Wedding', text: 'They turned our dream wedding into a reality beyond anything we imagined. Every detail was perfect.', rating: 5, img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop' },
-    { name: 'Ananya Sharma', role: 'Engagement', text: 'The most magical engagement ceremony! Our families were left speechless by the stunning décor.', rating: 5, img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop' },
-    { name: 'Vikram Enterprises', role: 'Corporate Event', text: 'Professional, creative, and flawless execution. Our annual gala was the talk of the industry.', rating: 5, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' },
+    { name: 'Amod & Ritika', role: 'Wedding', text: 'We had an amazing experience with Shimmer Plano Events for our wedding. Everything from décor to hospitality was perfectly managed. The team handled everything smoothly and made our big day truly special and stress-free. Highly recommended!', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop' },
+    { name: 'Khushboo & Om', role: 'Wedding', text: 'Shimmer Plano Events did a fantastic job in planning and managing our wedding. The décor was beautiful, and the entire event was well organized. Their team is very professional and supportive. Thank you for making our wedding memorable!', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop' },
+    { name: 'Vaibhav', role: 'Haldi & Mehndi', text: 'We booked Shimmer Plano Events for Haldi and Mehndi, and the experience was wonderful. The décor, coordination, and overall setup were perfect. Everything was handled on time, and the team was very cooperative.', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' }
 ];
 
 const whyUs = [
@@ -107,7 +116,7 @@ const reels = [
 
 export default function Home() {
     const revealRef = useReveal();
-    const [ref1, count1] = useCounter(100);
+    const [ref1, count1] = useCounter(560);
     const [ref2, count2] = useCounter(5);
     const [ref3, count3] = useCounter(100);
 
@@ -123,14 +132,31 @@ export default function Home() {
         return () => clearInterval(timer);
     }, []);
 
-    // Background preloading for gallery and parallax images
+    // Aggressive Background Preloading for Home Page Assets
     useEffect(() => {
+        // 1. Immediate Preload - Critical Hero Images
+        heroSlides.slice(1, 3).forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // 2. Delayed Preload - Heavy Sections (Services & Gallery)
         const timer = setTimeout(() => {
+            // Preload Service List thumbnails
+            servicesList.forEach(s => {
+                if (s.img) {
+                    const img = new Image();
+                    img.src = s.img;
+                }
+            });
+
+            // Preload Masonry Gallery thumbnails
             galleryImages.forEach(src => {
                 const img = new Image();
-                img.src = src.replace('/upload/', '/upload/f_auto,q_auto,w_800/'); // Preload thumb version
+                img.src = src;
             });
-        }, 3000);
+        }, 1000); // Start after 1 second to not block initial render
+
         return () => clearTimeout(timer);
     }, []);
 
@@ -192,12 +218,12 @@ export default function Home() {
                 <div className="gradient-orb gradient-orb-blush w-[300px] h-[300px] bottom-20 right-10 animate-orb-float" style={{ animationDelay: '3s' }} />
 
                 <div className="relative z-10 text-center px-4 max-w-5xl pt-20 md:pt-28">
-                    <div className="mb-4 animate-fade-in flex items-center justify-center gap-3" style={{ animationDelay: '0.2s' }}>
-                        <span className="text-gold text-xl">✦</span>
-                        <p className="text-white/90 text-sm md:text-base tracking-[0.3em] uppercase font-bold" style={{ fontFamily: 'var(--font-accent)' }}>
+                    <div className="mb-6 animate-fade-in flex items-center justify-center gap-4" style={{ animationDelay: '0.2s' }}>
+                        <span className="text-gold text-2xl">✦</span>
+                        <p className="text-white text-base md:text-xl tracking-[0.5em] uppercase font-bold drop-shadow-lg" style={{ fontFamily: 'var(--font-accent)' }}>
                             Shimmer Plano Events
                         </p>
-                        <span className="text-gold text-xl">✦</span>
+                        <span className="text-gold text-2xl">✦</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-slide-up drop-shadow-2xl" style={{ animationDelay: '0.4s', fontFamily: 'var(--font-heading)' }}>
@@ -242,52 +268,35 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════ SERVICES PREVIEW ═══════════ */}
-            <section className="py-28 bg-cream relative overflow-hidden">
+            {/* ═══════════ MASONRY GALLERY ═══════════ */}
+            <section className="py-28 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-20 reveal">
-                        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>What We Offer</p>
+                    <div className="text-center mb-16 reveal">
+                        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>Visual Journey</p>
                         <h2 className="text-3xl md:text-5xl font-bold text-charcoal mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
-                            Our <span className="gold-text italic">Premium</span> Services
+                            Moments of <span className="gold-text italic">Magic</span>
                         </h2>
-                        <div className="section-divider mb-5" />
-                        <p className="text-charcoal-light/60 max-w-xl mx-auto text-sm leading-relaxed">
-                            From intimate gatherings to grand weddings, we plan, design and execute everything with perfection.
-                            {activeGallery ? null : ' Click to view our work.'}
-                        </p>
+                        <div className="section-divider" />
                     </div>
+                </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {servicesList.map((s, i) => (
-                            <div
-                                key={s.title}
-                                className={`reveal group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-3 gold-border card-3d ${s.gallery ? 'cursor-pointer' : ''}`}
-                                style={{ transitionDelay: `${i * 0.08}s` }}
-                                onClick={() => s.gallery && openGallery(s)}
-                            >
-                                <div className="img-zoom h-52 relative">
-                                    <OptimizedImage src={s.img} alt={s.title} className="w-full h-full" />
-                                    <div className="img-overlay flex items-center justify-center">
-                                        <span className="text-white text-[10px] font-bold tracking-widest uppercase px-4 py-2 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full">
-                                            {s.gallery ? 'View Gallery →' : 'Explore →'}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{s.title}</h3>
-                                    <p className="text-charcoal-light/55 text-sm leading-relaxed mb-4">{s.desc}</p>
-                                    <div className="flex justify-between items-center">
-                                        <Link to="/services" onClick={(e) => e.stopPropagation()} className="text-gold text-[10px] font-bold tracking-widest uppercase hover:text-gold-dark transition-colors">
-                                            Learn More →
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                <div className="reveal mt-32 w-full relative z-20 min-h-[175vh] group/skipper">
+                    <Skiper30 images={galleryImages} />
+                    {/* Visual Overlay to blend transition */}
+                    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent pointer-events-none z-30" />
+                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none z-30" />
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center mt-12 reveal">
+                        <Link to="/portfolio" className="inline-block px-10 py-4 border-2 border-gold text-gold font-bold text-xs tracking-widest uppercase rounded-full hover:bg-gold hover:text-white transition-all duration-300">
+                            View Full Portfolio
+                        </Link>
                     </div>
                 </div>
             </section>
+
+   
 
 
             {/* ═══════════ CINEMATIC REELS ═══════════ */}
@@ -333,7 +342,7 @@ export default function Home() {
                                 <div className="absolute -inset-4 bg-gold/10 rounded-[3rem] blur-2xl group-hover:bg-gold/20 transition-all duration-700" />
                                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] h-full">
                                     <OptimizedImage 
-                                        src="https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400686/2I0A3871_egsxgv.jpg" 
+                                        src="https://res.cloudinary.com/dpvbnp8s3/image/upload/v1773400688/IMG_0554_q0cewx.jpg" 
                                         alt="Wedding Excellence" 
                                         className="transition-transform duration-1000 group-hover:scale-110"
                                         containerClassName="h-full"
@@ -405,6 +414,52 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* ═══════════ SERVICES PREVIEW ═══════════ */}
+            <section className="py-28 bg-cream relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center mb-20 reveal">
+                        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>What We Offer</p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-charcoal mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
+                            Our <span className="gold-text italic">Premium</span> Services
+                        </h2>
+                        <div className="section-divider mb-5" />
+                        <p className="text-charcoal-light/60 max-w-xl mx-auto text-sm leading-relaxed">
+                            From intimate gatherings to grand weddings, we plan, design and execute everything with perfection.
+                            {activeGallery ? null : ' Click to view our work.'}
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {servicesList.map((s, i) => (
+                            <div
+                                key={s.title}
+                                className={`reveal group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl
+                                    transition-all duration-500 hover:-translate-y-3 gold-border card-3d ${s.gallery ? 'cursor-pointer' : ''}`}
+                                style={{ transitionDelay: `${i * 0.08}s` }}
+                                onClick={() => s.gallery && openGallery(s)}
+                            >
+                                <div className="img-zoom h-52 relative">
+                                    <OptimizedImage src={s.img} alt={s.title} className="w-full h-full" />
+                                    <div className="img-overlay flex items-center justify-center">
+                                        <span className="text-white text-[10px] font-bold tracking-widest uppercase px-4 py-2 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full">
+                                            {s.gallery ? 'View Gallery →' : 'Explore →'}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold text-charcoal mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{s.title}</h3>
+                                    <p className="text-charcoal-light/55 text-sm leading-relaxed mb-4">{s.desc}</p>
+                                    <div className="flex justify-between items-center">
+                                        <Link to="/services" onClick={(e) => e.stopPropagation()} className="text-gold text-[10px] font-bold tracking-widest uppercase hover:text-gold-dark transition-colors">
+                                            Learn More →
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
             {/* ═══════════ WORKING PROCESS ═══════════ */}
             <section className="py-28 bg-white relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -451,10 +506,9 @@ export default function Home() {
                             >
                                 <span className="quote-mark">"</span>
                                 <div className="relative z-10">
-                                    <div className="stars text-base mb-4">{'★'.repeat(t.rating)}</div>
+                                    <div className="mb-4"></div>
                                     <p className="text-charcoal-light/65 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
                                     <div className="flex items-center gap-3">
-                                        <img src={t.img} alt={t.name} className="w-11 h-11 rounded-full object-cover ring-2 ring-gold/20" loading="lazy" />
                                         <div>
                                             <p className="font-bold text-charcoal text-sm">{t.name}</p>
                                             <p className="text-gold text-xs tracking-wider uppercase">{t.role}</p>
@@ -467,33 +521,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════ MASONRY GALLERY ═══════════ */}
-            <section className="py-28 bg-white relative overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16 reveal">
-                        <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3" style={{ fontFamily: 'var(--font-accent)' }}>Visual Journey</p>
-                        <h2 className="text-3xl md:text-5xl font-bold text-charcoal mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
-                            Moments of <span className="gold-text italic">Magic</span>
-                        </h2>
-                        <div className="section-divider" />
-                    </div>
-                </div>
-
-                <div className="reveal mt-32 w-full relative z-20 min-h-[175vh] group/skipper">
-                    <Skiper30 images={galleryImages} />
-                    {/* Visual Overlay to blend transition */}
-                    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent pointer-events-none z-30" />
-                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none z-30" />
-                </div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mt-12 reveal">
-                        <Link to="/portfolio" className="inline-block px-10 py-4 border-2 border-gold text-gold font-bold text-xs tracking-widest uppercase rounded-full hover:bg-gold hover:text-white transition-all duration-300">
-                            View Full Portfolio
-                        </Link>
-                    </div>
-                </div>
-            </section>
+   
 
             {/* Lightbox Gallery */}
             <AnimatePresence>

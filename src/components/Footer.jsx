@@ -105,7 +105,7 @@ export default function Footer() {
                             Wedding & Event Planning Experts
                         </p>
                         <p className="text-sm leading-relaxed text-white/40 mb-6">
-                            Founded 2020 | 100+ Events Delivered. We don't just plan events — we create experiences.
+                            Founded 2020 | 560+ Events Delivered. We don't just plan events — we create experiences.
                         </p>
                         <div className="flex gap-2.5">
                             {socialLinks.map((social) => (
@@ -179,7 +179,7 @@ export default function Footer() {
                                 </span>
                                 <div className="leading-relaxed">
                                     Faridabad, Haryana<br />
-                                    <span className="text-[10px] text-gold/60 uppercase tracking-widest">(Serving Delhi-NCR)</span>
+                                    <span className="text-[10px] text-gold/60 uppercase tracking-widest">(Serving Pan India)</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">

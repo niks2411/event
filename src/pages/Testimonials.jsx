@@ -2,12 +2,12 @@ import { useState } from 'react';
 import useReveal from '../hooks/useReveal';
 
 const testimonials = [
-    { name: 'Priya & Rahul Sharma', role: 'Wedding — Mumbai', rating: 5, text: 'Shimmer Plano Events made our wedding absolutely magical. Every detail was perfect, from the floral arrangements to the fireworks finale. Our guests are still talking about it!', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop', hasVideo: true },
-    { name: 'Ananya & Vikrant Patel', role: 'Engagement — Delhi', rating: 5, text: 'The most romantic engagement ceremony we could have imagined. The team captured our story beautifully and created an atmosphere that was pure magic.', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop', hasVideo: false },
-    { name: 'Vikram Enterprises', role: 'Corporate Gala — Bangalore', rating: 5, text: 'Professional, creative, and absolutely flawless execution. Our annual gala was transformed into a world-class event that elevated our brand image significantly.', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop', hasVideo: true },
-    { name: 'Sneha & Arjun Gupta', role: 'Haldi Ceremony — Jaipur', rating: 5, text: 'The haldi ceremony setup was absolutely stunning! The vibrant yellow and gold theme with marigold decorations exceeded all our expectations. Truly unforgettable!', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop', hasVideo: false },
-    { name: 'Rashi Mehta', role: 'Birthday Celebration — Pune', rating: 5, text: 'They turned my 30th birthday into the most magical evening. The surprise elements, custom décor, and the entire flow of the evening was perfect!', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop', hasVideo: true },
-    { name: 'Neha & Karan Singh', role: 'Destination Wedding — Udaipur', rating: 5, text: 'A fairy-tale destination wedding at a palace in Udaipur. Shimmer Plano Events handled everything with grace and precision. Every moment was picture-perfect.', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop', hasVideo: false },
+    { name: 'Amod & Ritika', role: 'Wedding', text: 'We had an amazing experience with Shimmer Plano Events for our wedding. Everything from décor to hospitality was perfectly managed. The team handled everything smoothly and made our big day truly special and stress-free. Highly recommended!', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop' },
+    { name: 'Khushboo & Om', role: 'Wedding', text: 'Shimmer Plano Events did a fantastic job in planning and managing our wedding. The décor was beautiful, and the entire event was well organized. Their team is very professional and supportive. Thank you for making our wedding memorable!', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop' },
+    { name: 'Vaibhav', role: 'Haldi & Mehndi', text: 'We booked Shimmer Plano Events for Haldi and Mehndi, and the experience was wonderful. The décor, coordination, and overall setup were perfect. Everything was handled on time, and the team was very cooperative.', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop' },
+    { name: 'Yogyata', role: 'Haldi & Mehndi', text: 'Our Haldi and Mehndi functions were beautifully managed by Shimmer Plano Events. The décor looked amazing, and the team ensured everything went smoothly. Truly a great experience!', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop' },
+    { name: 'Jyoti & Pramik', role: 'Engagement', text: 'Shimmer Plano Events did a great job for our engagement ceremony. The setup, décor, and overall management were excellent. Everything was well planned and executed perfectly. Thank you for making our special day memorable!', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop' },
+    { name: 'Sonakshi', role: 'Haldi Ceremony', text: 'We got our Haldi ceremony done by Shimmer Plano Events, and it was beautifully managed. The décor was vibrant and perfect for the occasion. The team was professional and handled everything smoothly. Highly satisfied', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop' }
 ];
 
 export default function Testimonials() {
@@ -55,9 +55,7 @@ export default function Testimonials() {
                         <div className="p-10 md:p-14 text-center relative">
                             <span className="quote-mark text-6xl">‟</span>
                             <div className="relative z-10">
-                                <div className="stars text-2xl mb-6">
-                                    {'★'.repeat(testimonials[activeSlide].rating)}
-                                </div>
+                                <div className="mt-8"></div>
                                 <p className="text-charcoal-light/65 text-lg md:text-xl leading-relaxed mb-8 italic" style={{ fontFamily: 'var(--font-accent)', fontSize: '1.35rem' }}>
                                     "{testimonials[activeSlide].text}"
                                 </p>
@@ -123,7 +121,7 @@ export default function Testimonials() {
                                             <p className="text-gold text-xs tracking-wider uppercase">{t.role}</p>
                                         </div>
                                     </div>
-                                    <div className="stars text-sm mb-3">{'★'.repeat(t.rating)}</div>
+                                    <div className="mb-3"></div>
                                     <p className="text-charcoal-light/55 text-sm leading-relaxed italic">"{t.text}"</p>
                                 </div>
                             </div>

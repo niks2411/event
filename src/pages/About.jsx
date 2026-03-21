@@ -11,9 +11,11 @@ const timelineData = [
         content: (
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>The Beginning</h4>
+                <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
+                    Shimmer Plano Events was founded with a clear vision: to redefine luxury event planning in Delhi NCR.
+                </p>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
-                    Shimmer Plano Events was founded with a clear vision: to redefine luxury event planning in Faridabad.
-                    Aakash Narwat started the journey with a passion for excellence and a commitment to perfection.
+                    Aakash Narwat started the journey with a passion for excellence and a strong commitment to perfection.
                 </p>
             </div>
         ),
@@ -25,6 +27,9 @@ const timelineData = [
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Rapid Growth</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
                     Successfully planned and executed our first 20+ events, ranging from intimate home ceremonies to grand outdoor celebrations.
+                </p>
+                <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
+                    This phase marked the beginning of our growing client trust and strong foundation.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-gold/5 rounded-2xl border border-gold/10">
@@ -41,7 +46,7 @@ const timelineData = [
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d text-left">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Delhi-NCR Expansion</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
-                    We expanded our operations to cover the entire Delhi-NCR region, establishing a strong footprint in Gurgaon and Delhi's premium wedding market.
+                    We expanded our operations across the entire Delhi NCR region, building a strong presence in Gurgaon and Delhi’s premium wedding market.
                 </p>
             </div>
         ),
@@ -50,15 +55,16 @@ const timelineData = [
         title: '2023',
         content: (
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
-                <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>The 50+ Milestone</h4>
+                <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>The 200+ Milestone</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
-                    Reaching our 50th event was a proud moment. We became known for our attention to detail and flawless execution.
+                    Reaching our 100th event was a proud moment for us. We became known for our attention to detail, creative execution, and seamless event management.
                 </p>
-                <div className="rounded-2xl overflow-hidden h-48">
+                <div className="rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-video w-full">
                     <OptimizedImage
-                        src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop"
-                        alt="Event Setup"
-                        className="w-full h-full"
+                        src="/milestone.png"
+                        alt="Event Setup milestone"
+                        className="w-full h-full object-cover object-center"
+                        containerClassName="w-full h-full"
                     />
                 </div>
             </div>
@@ -70,7 +76,7 @@ const timelineData = [
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
                 <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>Premium Identity</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed">
-                    Recognized as a trusted premium brand. We leveled up our design capabilities and introduced specialized effects and luxury hospitality services.
+                    Recognized as a trusted premium brand, we elevated our design standards and introduced specialized effects along with luxury hospitality services.
                 </p>
             </div>
         ),
@@ -79,13 +85,13 @@ const timelineData = [
         title: '2025',
         content: (
             <div className="bg-white p-6 md:p-10 rounded-3xl gold-border shadow-xl card-3d">
-                <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>100+ Experiences</h4>
+                <h4 className="text-xl md:text-2xl font-bold mb-3 text-charcoal" style={{ fontFamily: 'var(--font-heading)' }}>560+ Experiences</h4>
                 <p className="text-charcoal-light/65 text-sm md:text-base leading-relaxed mb-4">
-                    Proudly delivered over 100+ unforgettable experiences. Our journey continues with a commitment to making every celebration legendary.
+                    Proudly delivered over 560+ unforgettable experiences. Our journey continues with a vision to make every celebration more grand, seamless, and truly memorable.
                 </p>
                 <div className="flex gap-4">
                     <div className="flex-1 p-4 bg-charcoal text-white rounded-2xl">
-                        <p className="text-2xl font-bold gold-text">100+</p>
+                        <p className="text-2xl font-bold gold-text">560+</p>
                         <p className="text-[10px] uppercase tracking-wider opacity-40">Grand Celebrations</p>
                     </div>
                 </div>
@@ -96,7 +102,7 @@ const timelineData = [
 
 export default function About() {
     const revealRef = useReveal();
-    const [ref1, count1] = useCounter(100);
+    const [ref1, count1] = useCounter(560);
     const [ref2, count2] = useCounter(5);
     const [ref3, count3] = useCounter(150);
     const [ref4, count4] = useCounter(100);
@@ -135,11 +141,13 @@ export default function About() {
                             </h2>
                             <div className="section-divider-left mb-8" />
                             <p className="text-charcoal-light/65 leading-relaxed mb-4 text-[15px]">
-                                Shimmer Plano Events was founded in 2020 with one simple vision — to create unforgettable celebrations through creativity, discipline, and perfect planning.
+                                Shimmer Plano Events is a wedding planning and event management company based in Faridabad, serving across Delhi NCR. Founded in 2020 by Aakash Narwat, the company focuses on creating well-organized and memorable celebrations.
+                            </p>
+                            <p className="text-charcoal-light/65 leading-relaxed mb-4 text-[15px]">
+                                We have successfully managed 560+ events, including engagements, haldi, mehndi, sangeet, and weddings. Our team handles planning, coordination, décor support, DJ setups, SFX, and hospitality management to ensure every event runs smoothly.
                             </p>
                             <p className="text-charcoal-light/65 leading-relaxed mb-8 text-[15px]">
-                                In a short span of time, we have successfully planned and executed 100+ events, including weddings, pre-wedding functions, corporate events, and private celebrations across Faridabad and Delhi-NCR.
-                                We believe every event is unique, and our team works closely with clients to understand their vision and transform it into reality — beautifully and professionally.
+                                At Shimmer Plano Events, our goal is simple — to turn your special moments into beautiful and unforgettable memories. ✨
                             </p>
                             <Link to="/services" className="inline-block px-8 py-3.5 bg-gold text-white text-sm font-semibold tracking-widest uppercase rounded-full hover:bg-gold-dark transition-all duration-300 btn-glow">
                                 Our Services
@@ -153,7 +161,7 @@ export default function About() {
                                     className="w-full h-full"
                                 />
                                 <div className="absolute -bottom-6 -left-6 bg-gold text-white p-6 rounded-2xl shadow-xl animate-gentle-pulse">
-                                    <p className="text-3xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>100+</p>
+                                    <p className="text-3xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>560+</p>
                                     <p className="text-sm tracking-wider uppercase">Successful Events</p>
                                 </div>
                             </div>
@@ -169,9 +177,11 @@ export default function About() {
                         <div className="reveal-left order-2 lg:order-1">
                             <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto">
                                 <OptimizedImage
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop"
+                                    src="/founder.jpeg"
                                     alt="Aakash Narwat"
                                     className="w-full h-full"
+                                    containerClassName="w-full h-full"
+                                    objectFit="object-cover"
                                 />
                                 <div className="absolute top-4 right-4 w-24 h-24 border-t-2 border-r-2 border-gold/30 rounded-tr-2xl z-10" />
                             </div>
@@ -183,9 +193,11 @@ export default function About() {
                             </h2>
                             <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-6">Founder – Shimmer Plano Events</p>
                             <div className="section-divider-left mb-8" />
+                            <p className="text-charcoal-light/65 leading-relaxed text-[15px] mb-4">
+                                Founder of Shimmer Plano Events with a vision to create luxurious and memorable wedding celebrations.
+                            </p>
                             <p className="text-charcoal-light/65 leading-relaxed text-[15px]">
-                                Under the leadership of Aakash Narwat, Shimmer Plano Events has grown into a trusted event planning brand known for quality, commitment, and flawless execution.
-                                His dedication to creating stress-free, beautifully managed events has helped Shimmer Plano Events become a trusted name in the industry.
+                                With strong experience in wedding planning and event coordination, he leads the team to deliver flawless events.
                             </p>
                         </div>
                     </div>

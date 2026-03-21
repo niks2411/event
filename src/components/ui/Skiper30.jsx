@@ -57,7 +57,10 @@ const Column = ({ images = [], y, topClass }) => {
   return (
     <motion.div
       className={`relative flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw] ${topClass} will-change-transform`}
-      style={{ y }}
+      style={{ 
+        y,
+        translateZ: 0 // Force hardware acceleration
+      }}
     >
       {images.map((src, i) => (
         <div key={i} className="relative h-[45vh] w-full overflow-hidden shadow-2xl">

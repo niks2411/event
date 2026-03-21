@@ -2,15 +2,33 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Lightbox({ gallery, index, onClose, onNext, onPrev, onIndexChange }) {
-    // Preload all images in the background when the lightbox opens
+    // Optimized Preloading Logic
     useEffect(() => {
-        if (gallery && gallery.length > 0) {
-            gallery.forEach((src) => {
-                const img = new Image();
-                img.src = src;
+        if (!gallery || gallery.length === 0) return;
+
+        // Preload immediate neighbors for instant switching
+        const neighbors = [
+            gallery[(index + 1) % gallery.length],
+            gallery[(index - 1 + gallery.length) % gallery.length]
+        ];
+
+        neighbors.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // Background preload remainder of gallery
+        const timer = setTimeout(() => {
+            gallery.forEach((src, i) => {
+                if (i !== index && !neighbors.includes(src)) {
+                    const img = new Image();
+                    img.src = src;
+                }
             });
-        }
-    }, [gallery]);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, [gallery, index]);
 
     if (!gallery || gallery.length === 0) return null;
 
@@ -56,18 +74,27 @@ export default function Lightbox({ gallery, index, onClose, onNext, onPrev, onIn
             )}
 
             {/* Main Image Container */}
-            <div className="w-full h-full flex items-center justify-center p-4 md:p-12" onClick={(e) => e.stopPropagation()}>
-                <AnimatePresence mode="wait">
-                    <motion.img
-                        key={gallery[index]}
-                        src={gallery[index]}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 1.05 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-charcoal/20"
-                        loading="eager"
-                    />
+            <div className="w-full h-full flex items-center justify-center p-4 md:p-12 relative overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                <AnimatePresence mode="popLayout" initial={false}>
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: 20, scale: 0.98 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0, x: -20, scale: 1.02 }}
+                        transition={{ 
+                            duration: 0.4, 
+                            ease: [0.22, 1, 0.36, 1],
+                            opacity: { duration: 0.3 }
+                        }}
+                        className="w-full h-full flex items-center justify-center"
+                    >
+                        <img
+                            src={gallery[index]}
+                            className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-[0_0_80px_rgba(0,0,0,0.6)] bg-white/5"
+                            loading="eager"
+                            alt="Gallery view"
+                        />
+                    </motion.div>
                 </AnimatePresence>
             </div>
 
