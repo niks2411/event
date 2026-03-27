@@ -107,40 +107,51 @@ export default function Header() {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed inset-0 top-0 lg:hidden transition-all duration-500 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                className={`fixed inset-0 top-0 lg:hidden overflow-hidden transition-all duration-500 z-[105] ${mobileOpen ? 'visible' : 'invisible'
                     }`}
             >
                 {/* Backdrop */}
                 <div
-                    className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+                    className={`absolute inset-0 bg-charcoal/60 backdrop-blur-md transition-opacity duration-500 ${mobileOpen ? 'opacity-100' : 'opacity-0'
+                        }`}
                     onClick={() => setMobileOpen(false)}
                 />
                 {/* Panel */}
                 <div
-                    className={`absolute right-0 top-0 h-full w-[280px] bg-white shadow-2xl transition-transform duration-500 ease-out ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+                    className={`absolute right-0 top-0 h-full w-[300px] bg-white shadow-[-20px_0_60px_rgba(0,0,0,0.15)] transition-transform duration-500 ease-[0.22,1,0.36,1] ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                 >
-                    <nav className="flex flex-col pt-24 px-6 space-y-1">
+                    <div className="absolute inset-0 bg-cream/30 pointer-events-none" />
+                    <nav className="relative flex flex-col pt-32 px-8 space-y-2">
                         {navLinks.map((link, i) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`py-3.5 px-4 text-sm font-medium tracking-wide uppercase rounded-xl transition-all duration-300 ${location.pathname === link.path
-                                    ? 'text-gold bg-gold/5 font-semibold'
+                                className={`py-4 px-6 text-[15px] font-bold tracking-[0.15em] uppercase rounded-2xl transition-all duration-300 ${location.pathname === link.path
+                                    ? 'text-gold bg-gold/10 scale-[1.02]'
                                     : 'text-charcoal-light hover:text-gold hover:bg-gold/5'
                                     }`}
-                                style={{ animationDelay: `${i * 0.05}s` }}
+                                style={{ 
+                                    transitionDelay: `${i * 0.05}s`,
+                                    fontFamily: 'var(--font-heading)'
+                                }}
                             >
                                 {link.label}
                             </Link>
                         ))}
-                        <div className="pt-4">
+                        <div className="pt-8 px-2">
                             <Link
                                 to="/book"
-                                className="block py-3.5 px-6 bg-gold text-center text-white text-sm font-semibold tracking-wider uppercase rounded-full hover:bg-gold-dark transition-all duration-300"
+                                className="block py-4 px-8 bg-gold text-center text-white text-[13px] font-bold tracking-widest uppercase rounded-full hover:bg-gold-dark transition-all duration-300 shadow-xl shadow-gold/20"
                             >
                                 Book Now
                             </Link>
+                        </div>
+
+                        <div className="pt-12 px-6 border-t border-gold/10 mt-12">
+                            <p className="text-[10px] text-gold font-bold tracking-[0.3em] uppercase mb-4">Contact Us</p>
+                            <a href="tel:8826805646" className="text-charcoal text-sm font-bold block mb-2">8826805646</a>
+                            <p className="text-charcoal-light/60 text-xs">Faridabad, Haryana</p>
                         </div>
                     </nav>
                 </div>
